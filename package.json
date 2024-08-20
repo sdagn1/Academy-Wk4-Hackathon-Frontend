@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+
     "start": "tsc && npm run copy-njk && npm run copy-assets && npm run copy-files && node dist/app.js",
     "copy-njk": "cpy 'views/*' 'dist/views'",
     "copy-assets": "cpy 'assets/*/*.*' 'dist/assets'",
     "copy-files": "cpy 'files/*' 'dist/files'",
+
     "dev": "nodemon src/app.ts",
     "linter": "npx eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-njk": "cpy 'views/*' 'dist/views'",
+    "copy-assets": "cpy 'assets/*/*.*' 'dist/assets'"
   },
   "keywords": [],
   "author": "Shaun Ganley <shaung@kainos.com>",
@@ -19,6 +23,7 @@
     "axios": "^1.7.4",
     "body-parser": "^1.20.2",
     "csv-parse": "^5.5.6",
+    "cpy-cli": "^5.0.0",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "govuk-frontend": "^5.5.0",
