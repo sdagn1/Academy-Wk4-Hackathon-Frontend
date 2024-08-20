@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import session from "express-session";
 import path from "path";
 
-import { renderHomePage } from "./controllers/TestController";
+import { renderHomePage, renderSearchPage, renderTopTenDetailPage, renderTopTenPage } from "./controllers/TestController";
 
 const app = express();
 
@@ -34,3 +34,6 @@ app.listen(3000, () => {
 });
 
 app.get('/', renderHomePage);
+app.get('/search-location', renderSearchPage);
+app.get('/top-ten', renderTopTenPage);
+app.get('/top-ten-detail', renderTopTenDetailPage);
