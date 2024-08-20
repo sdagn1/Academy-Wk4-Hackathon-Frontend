@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Dog Waste Home Page</title>
-        <link rel="stylesheet" type="text/css" href="/css/govuk-frontend.min.css">
-    </head>
-    <body class="govuk-template__body">
+        {% extends "main.html" %}
 
-        <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
+        {% block content %}
+        <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
         <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
@@ -136,11 +135,8 @@
               </div>
             </div>
           </div>
-
-          <script type="module" src="<YOUR-JAVASCRIPTS-FOLDER>/govuk-frontend.min.js"></script>
-            <script type="module">
-              import { initAll } from '<YOUR-JAVASCRIPTS-FOLDER>/govuk-frontend.min.js'
-              initAll()
-            </script>
-    </body>
-</html>
+                          
+        </div>
+        </div>
+        </div>
+        {% endblock %}
