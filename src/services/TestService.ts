@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import { Search } from "../models/Search";
 
 export const getDatabases = async (): Promise<string[]> => {
     try {
@@ -9,4 +10,9 @@ export const getDatabases = async (): Promise<string[]> => {
         console.log(e);
         throw new Error('Failed to get databases');
     }
+}
+
+
+export const getLocations = async (search: String, token: String): Promise<String[]> => {
+    return [search+'2', search+'3'];
 }

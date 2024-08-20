@@ -5,7 +5,6 @@
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
 
-
 {% block head %}
   <link rel="stylesheet" type="text/css" href="./govuk-frontend.min.css">
 {% endblock %}
@@ -14,10 +13,10 @@
   {{ govukHeader({
     homepageUrl: "#",
     serviceName: "Dog Dirt Division",
-    serviceUrl: "#",
+    serviceUrl: "/",
     navigation: [
       {
-        href: "#",
+        href: "/search",
         text: "Search by Location"
       },
       {

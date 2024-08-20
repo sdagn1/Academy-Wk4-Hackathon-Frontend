@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import session from "express-session";
 import path from "path";
 
-import { renderHomePage } from "./controllers/TestController";
+import { postSearchForm, renderHomePage, renderSearchPage, renderSearchResultsPage } from "./controllers/TestController";
 
 const app = express();
 
@@ -26,6 +26,7 @@ app.use(session({ secret: 'SUPER_SECRET', cookie: { maxAge: 28800000 }}));
 declare module "express-session" {
   interface SessionData {
     token: string;
+    location: string;
   }
 }
 
@@ -34,3 +35,7 @@ app.listen(3000, () => {
 });
 
 app.get('/', renderHomePage);
+app.get('/search', renderSearchPage);
+
+app.post('/search', postSearchForm);
+app.get('/search-result', renderSearchResultsPage);
