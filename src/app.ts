@@ -6,7 +6,7 @@ import path from "path";
 
 
 
-import { renderHomePage, renderSearchPage, renderTopTenDetailPage, renderTopTenPage, renderSearchResultsPage, postSearchForm } from "./controllers/TestController";
+import { renderHomePage, renderSearchPage, renderTopTenDetailPage, renderTopTenPage, renderSearchResultsPage, postSearchForm, renderRandomPage } from "./controllers/TestController";
 
 
 const app = express();
@@ -41,6 +41,7 @@ app.get('/', renderHomePage);
 app.get('/search-location', renderSearchPage);
 app.get('/top-ten', renderTopTenPage);
 app.get('/top-ten-detail', renderTopTenDetailPage);
+app.get('/random', renderRandomPage)
 
 app.post('/search-location', postSearchForm);
 app.get('/search-result', renderSearchResultsPage);

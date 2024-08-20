@@ -31,7 +31,12 @@ export const renderSearchResultsPage = async (req: express.Request, res: express
 
     res.render('search-result.html', {locations: location});
 
+    
 }
 
+export const renderRandomPage = async (req: express.Request, res: express.Response): Promise<void> => {
+    res.render("random.html");
+}
+ 
 
 

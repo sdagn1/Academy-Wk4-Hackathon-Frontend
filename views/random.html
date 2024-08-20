@@ -1,42 +1,20 @@
+
 {% extends "main.html" %}
 
 {% block content %}
-<div class="govuk-width-container">
-  <div class="govuk-grid-row">
 
-    <div class="govuk-grid-column-two-thirds">
-
-      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
-        <div class="govuk-accordion__section">
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="testClass govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
-                Understanding our digusting nation
-              </span>
-            </h2>
-            <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-              Statistics, chaoticness and grossness
-            </div>
-          </div>
-          <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content">
-            <ul class="govuk-list">
-              <li>
-                <a class="govuk-link" href="/search-location">Information about each UK region</a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/top-ten">Which area is in the top 10?</a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/random">Random</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+<body class="govuk-template__body">
+  
+  <div class="govuk-width-container">
+    <a href="/" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper" id="main-content">
+      <h1 class="govuk-heading-xl">WANTED: Guilty suspect</h1>
+      <img src="assets/images/guilty_dog.jpg" alt="Dog with sign" width="500" height="600">
+      <p>Caused havoc across the nation. If found report to gov.uk</p>
+    </main>
   </div>
-</div>
-<footer class="govuk-footer">
+
+  <footer class="govuk-footer">
   <div class="govuk-width-container">
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
@@ -61,5 +39,14 @@
     </div>
   </div>
 </footer>
+  <script type="module" src="/javascripts/govuk-frontend.min.js"></script>
+  <script type="module">
+    import {
+      initAll
+    } from '/javascripts/govuk-frontend.min.js'
+    initAll()
+  </script>
+</body>
 
+</html>
 {% endblock %}
