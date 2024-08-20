@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
+    "start": "tsc && npm run copy-njk && npm run copy-assets && npm run copy-files && node dist/app.js",
+    "copy-njk": "cpy 'views/*' 'dist/views'",
+    "copy-assets": "cpy 'assets/*/*.*' 'dist/assets'",
+    "copy-files": "cpy 'files/*' 'dist/files'",
     "dev": "nodemon src/app.ts",
     "linter": "npx eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,8 +16,9 @@
   "author": "Shaun Ganley <shaung@kainos.com>",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.3.1",
+    "axios": "^1.7.4",
     "body-parser": "^1.20.2",
+    "csv-parse": "^5.5.6",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "govuk-frontend": "^5.5.0",
@@ -28,7 +32,7 @@
     "@types/node": "^20.11.30",
     "@types/nunjucks": "^3.2.6",
     "eslint": "^8.57.0",
-    "nodemon": "^3.1.0",
+    "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.6.0"
