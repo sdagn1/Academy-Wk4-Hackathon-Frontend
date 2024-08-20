@@ -1,8 +1,10 @@
 import express from "express";
-import { getDatabases, getLocations } from "../services/TestService"
+import { parseFile } from "../node-csv-read";
+import { getDatabases, getLocations } from "../services/TestService";
 
 export const renderHomePage = async (req: express.Request, res: express.Response): Promise<void> => {
     res.render('home.html');
+    parseFile();
 }
 
 export const renderSearchPage = async (req: express.Request, res: express.Response): Promise<void> => {
@@ -30,5 +32,6 @@ export const renderSearchResultsPage = async (req: express.Request, res: express
     res.render('search-result.html', {locations: location});
 
 }
+
 
 
